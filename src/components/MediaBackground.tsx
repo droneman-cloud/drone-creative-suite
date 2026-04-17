@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, type ReactElement } from "react";
 
 /**
  * Visual-media themed flying background.
@@ -17,7 +17,7 @@ type IconName =
   | "lens"
   | "sparkle";
 
-const Icons: Record<IconName, JSX.Element> = {
+const Icons: Record<IconName, ReactElement> = {
   reel: (
     <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.2">
       <circle cx="32" cy="32" r="22" />
