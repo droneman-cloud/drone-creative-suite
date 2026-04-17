@@ -5,14 +5,16 @@ import { useEffect, useState } from "react";
  * Displays a clapperboard "snap" then a film-leader countdown 3 → 2 → 1 → ACTION.
  * Uses sessionStorage so it doesn't replay on every navigation.
  */
+type Stage = "clap" | 3 | 2 | 1 | "action" | "done";
+
 export function CinematicIntro() {
-  const [stage, setStage] = useState<"clap" | 3 | 2 | 1 | "action" | "done">(
+  const [stage, setStage] = useState<Stage>(
     typeof window !== "undefined" && sessionStorage.getItem("intro-played") ? "done" : "clap"
   );
 
   useEffect(() => {
     if (stage === "done") return;
-    const sequence: Array<[typeof stage, number]> = [
+    const sequence: Array<[Stage, number]> = [
       ["clap", 700],
       [3, 700],
       [2, 700],
