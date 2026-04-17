@@ -108,17 +108,17 @@ export function MediaBackground() {
       seed = (seed * 9301 + 49297) % 233280;
       return seed / 233280;
     };
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < 28; i++) {
       list.push({
         icon: names[i % names.length],
         left: `${Math.round(rnd() * 96)}%`,
         top: `${Math.round(rnd() * 96)}%`,
-        size: 28 + Math.round(rnd() * 56),
+        size: 36 + Math.round(rnd() * 64),
         hue: hues[i % hues.length],
         anim: anims[i % anims.length],
         delay: `-${Math.round(rnd() * 18)}s`,
         duration: `${14 + Math.round(rnd() * 18)}s`,
-        opacity: 0.08 + rnd() * 0.18,
+        opacity: 0.22 + rnd() * 0.28,
         rotate: Math.round(rnd() * 60 - 30),
       });
     }
