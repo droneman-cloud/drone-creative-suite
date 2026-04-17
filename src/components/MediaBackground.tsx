@@ -118,7 +118,7 @@ export function MediaBackground() {
         anim: anims[i % anims.length],
         delay: `-${Math.round(rnd() * 18)}s`,
         duration: `${14 + Math.round(rnd() * 18)}s`,
-        opacity: 0.22 + rnd() * 0.28,
+        opacity: 0.14 + rnd() * 0.16,
         rotate: Math.round(rnd() * 60 - 30),
       });
     }
