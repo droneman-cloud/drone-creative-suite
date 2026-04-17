@@ -7,6 +7,7 @@ import { SceneBackground } from "@/components/SceneBackground";
 import { MediaBackground } from "@/components/MediaBackground";
 import { DroneCursor } from "@/components/DroneCursor";
 import { ScrollDrone } from "@/components/ScrollDrone";
+import { CinematicIntro } from "@/components/CinematicIntro";
 
 function NotFoundComponent() {
   return (
@@ -73,6 +74,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
+      <CinematicIntro />
       <SceneBackground />
       <MediaBackground />
       <ScrollDrone />
