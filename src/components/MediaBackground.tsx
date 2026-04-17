@@ -94,11 +94,11 @@ export function MediaBackground() {
       "reel", "clap", "camera", "play", "aperture", "frame", "lens", "sparkle",
     ];
     const hues = [
-      "oklch(0.72 0.14 250)",
-      "oklch(0.74 0.13 290)",
-      "oklch(0.78 0.12 200)",
-      "oklch(0.70 0.16 320)",
-      "oklch(0.76 0.13 220)",
+      "oklch(0.45 0.15 250)",
+      "oklch(0.48 0.16 290)",
+      "oklch(0.50 0.14 200)",
+      "oklch(0.42 0.18 320)",
+      "oklch(0.46 0.15 220)",
     ];
     const anims = ["animate-media-float", "animate-media-drift", "animate-media-orbit"];
     const list: FloatItem[] = [];
@@ -147,9 +147,7 @@ export function MediaBackground() {
         </div>
       ))}
       {/* Film grain overlay */}
-      <div className="absolute inset-0 film-grain opacity-[0.06]" />
-      {/* Soft vignette to keep it cinematic */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,oklch(0.92_0.02_250/0.35)_100%)]" />
+      <div className="absolute inset-0 film-grain opacity-[0.05]" />
     </div>
   );
 }
