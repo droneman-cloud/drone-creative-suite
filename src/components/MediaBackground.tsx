@@ -126,7 +126,7 @@ export function MediaBackground() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-[5] overflow-hidden" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden>
       {items.map((it, i) => (
         <div
           key={i}
@@ -140,7 +140,7 @@ export function MediaBackground() {
             opacity: it.opacity,
             animationDelay: it.delay,
             animationDuration: it.duration,
-            transform: `rotate(${it.rotate}deg)`,
+            ["--rot" as string]: `${it.rotate}deg`,
           }}
         >
           {Icons[it.icon]}
