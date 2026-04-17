@@ -166,6 +166,47 @@
   animation: grid-move 30s linear infinite;
 }
 
+/* Visual media theme additions */
+@keyframes media-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(10px, -22px, 0) rotate(8deg); }
+}
+@keyframes media-drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(-24px, 18px, 0) rotate(-12deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+@keyframes media-orbit {
+  0% { transform: rotate(0deg) translateX(14px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(14px) rotate(-360deg); }
+}
+.animate-media-float { animation: media-float 16s ease-in-out infinite; }
+.animate-media-drift { animation: media-drift 20s ease-in-out infinite; }
+.animate-media-orbit { animation: media-orbit 24s linear infinite; }
+
+/* Film grain via layered noise */
+.film-grain {
+  background-image:
+    radial-gradient(oklch(0.2 0.02 260 / 0.25) 1px, transparent 1px),
+    radial-gradient(oklch(0.2 0.02 260 / 0.18) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 2px;
+  mix-blend-mode: multiply;
+}
+
+/* Cinematic film strip with sprocket holes */
+.film-strip {
+  background:
+    linear-gradient(180deg, oklch(0.18 0.02 260 / 0.85), oklch(0.18 0.02 260 / 0.85)),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 14px,
+      oklch(1 0 0 / 0.95) 14px 22px,
+      transparent 22px 36px
+    );
+  background-blend-mode: normal, screen;
+}
+
 .shimmer-bar {
   background: linear-gradient(90deg,
     oklch(0.78 0.13 220) 0%,
