@@ -94,11 +94,11 @@ export function MediaBackground() {
       "reel", "clap", "camera", "play", "aperture", "frame", "lens", "sparkle",
     ];
     const hues = [
-      "oklch(0.72 0.14 250)",
-      "oklch(0.74 0.13 290)",
-      "oklch(0.78 0.12 200)",
-      "oklch(0.70 0.16 320)",
-      "oklch(0.76 0.13 220)",
+      "oklch(0.45 0.15 250)",
+      "oklch(0.48 0.16 290)",
+      "oklch(0.50 0.14 200)",
+      "oklch(0.42 0.18 320)",
+      "oklch(0.46 0.15 220)",
     ];
     const anims = ["animate-media-float", "animate-media-drift", "animate-media-orbit"];
     const list: FloatItem[] = [];
@@ -108,17 +108,17 @@ export function MediaBackground() {
       seed = (seed * 9301 + 49297) % 233280;
       return seed / 233280;
     };
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < 28; i++) {
       list.push({
         icon: names[i % names.length],
         left: `${Math.round(rnd() * 96)}%`,
         top: `${Math.round(rnd() * 96)}%`,
-        size: 28 + Math.round(rnd() * 56),
+        size: 36 + Math.round(rnd() * 64),
         hue: hues[i % hues.length],
         anim: anims[i % anims.length],
         delay: `-${Math.round(rnd() * 18)}s`,
         duration: `${14 + Math.round(rnd() * 18)}s`,
-        opacity: 0.08 + rnd() * 0.18,
+        opacity: 0.14 + rnd() * 0.16,
         rotate: Math.round(rnd() * 60 - 30),
       });
     }
@@ -126,7 +126,7 @@ export function MediaBackground() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 -z-[5] overflow-hidden" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden>
       {items.map((it, i) => (
         <div
           key={i}
@@ -140,16 +140,14 @@ export function MediaBackground() {
             opacity: it.opacity,
             animationDelay: it.delay,
             animationDuration: it.duration,
-            transform: `rotate(${it.rotate}deg)`,
+            ["--rot" as string]: `${it.rotate}deg`,
           }}
         >
           {Icons[it.icon]}
         </div>
       ))}
       {/* Film grain overlay */}
-      <div className="absolute inset-0 film-grain opacity-[0.06]" />
-      {/* Soft vignette to keep it cinematic */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,oklch(0.92_0.02_250/0.35)_100%)]" />
+      <div className="absolute inset-0 film-grain opacity-[0.05]" />
     </div>
   );
 }
