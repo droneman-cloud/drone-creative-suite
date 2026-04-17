@@ -4,6 +4,7 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SceneBackground } from "@/components/SceneBackground";
+import { MediaBackground } from "@/components/MediaBackground";
 import { DroneCursor } from "@/components/DroneCursor";
 import { ScrollDrone } from "@/components/ScrollDrone";
 
@@ -73,6 +74,7 @@ function RootComponent() {
   return (
     <>
       <SceneBackground />
+      <MediaBackground />
       <ScrollDrone />
       <DroneCursor />
       <Header />
